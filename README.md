@@ -1,5 +1,5 @@
 
-##В этом репозитаории содержатся UI Selenide + API Rest Assured автотесты
+# В этом репозитаории содержатся UI Selenide + API Rest Assured автотесты
 
 ## UI тесты. Пакет appleInsider. Тест кейс №1
 
