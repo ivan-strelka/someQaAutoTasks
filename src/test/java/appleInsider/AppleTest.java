@@ -1,8 +1,8 @@
 package appleInsider;
 
 import ui_selenium.core.BaseSelenideTest;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 
 public class AppleTest extends BaseSelenideTest {
@@ -13,7 +13,7 @@ public class AppleTest extends BaseSelenideTest {
 
     @Test
     public void checkHref(){
-        Assert.assertTrue(new MainPage(BASE_URL)
+        Assertions.assertTrue(new MainPage(BASE_URL)
                 .search(SEARCH_STRING)
                 .getHrefFromFirstArticle()
                 .contains(EXPECTED_WORD));

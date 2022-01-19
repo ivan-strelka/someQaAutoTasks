@@ -30,10 +30,15 @@ Test_3
 1.Используя сервис https://jsonplaceholder.typicode.com/ получить список фотографий "photos"
 2.Убедиться, что поля "url" и "thumbnailUrl" совпадают
 
-Test_4
-1.Используя сервис https://jsonplaceholder.typicode.com/ получить 5 по счету пост
+Test_4 1.Используя сервис https://jsonplaceholder.typicode.com/ получить 5 по счету пост
+
 2. найти в нем id с той же цифрой(5)
 
 ## 4. Selenium + FindBy + PageFactory
 
-## 5. typesafe config properties 
+## 5. typesafe config properties
+
+## 6. Stream Api Java
+
+1. Разобраны методы для фильтраций значений и перебора через forEach
+2. Также разобран вариант сортировки через sorted() от большему к меньшему и наоборот

@@ -4,8 +4,9 @@ import api.jsonplaceholder.photos.Photo;
 import api.jsonplaceholder.posts.Post;
 import api.jsonplaceholder.users.UserResource;
 import api.jsonplaceholder.spec.Specifications;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class PlaceHolderTest {
 
         users.stream().filter(x->x.getPhone().contains(".")).forEach(x->phones.add(x.getPhone()));
 
-        Assert.assertEquals(2, phones.size());
+        Assertions.assertEquals(2, phones.size());
     }
 
     /**
@@ -50,10 +51,10 @@ public class PlaceHolderTest {
                 .get("photos")
                 .then().log().all()
                 .extract().body().jsonPath().getList(".",Photo.class);
-        Assert.assertEquals(photos.size(),5000);
+        Assertions.assertEquals(photos.size(), 5000);
 
         Set<Integer> albumIds = photos.stream().map(Photo::getAlbumId).collect(Collectors.toSet());
-        Assert.assertEquals(albumIds.size(),100);
+        Assertions.assertEquals(albumIds.size(), 100);
     }
 
     /**
@@ -71,8 +72,8 @@ public class PlaceHolderTest {
                 .then().log().all()
                 .extract().body().jsonPath().getList(".",Photo.class);
         String regex = "\\d{3}\\/";
-        photos.forEach(x->Assert.assertEquals(x.getThumbnailUrl().replaceAll(regex,""),
-                x.getUrl().replaceAll(regex,"")));
+        photos.forEach(x -> Assertions.assertEquals(x.getThumbnailUrl().replaceAll(regex, ""),
+                x.getUrl().replaceAll(regex, "")));
     }
 
     /**
@@ -89,6 +90,6 @@ public class PlaceHolderTest {
                 .then().log().all()
                 .extract().body().jsonPath().getList(".",Post.class);
         int postIndex = 5;
-        Assert.assertEquals(postIndex,posts.get(postIndex).getId()-1);
+        Assertions.assertEquals(postIndex, posts.get(postIndex).getId() - 1);
     }
 }
